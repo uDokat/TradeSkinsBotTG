@@ -5,6 +5,7 @@ import ua.dokat.enums.SkinRarity;
 import ua.dokat.enums.SkinType;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Getter
 public class BuffSkin implements Serializable {
@@ -24,4 +25,17 @@ public class BuffSkin implements Serializable {
 
     private SkinType type;
     private SkinRarity rarity;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BuffSkin buffSkin = (BuffSkin) o;
+        return goods_id == buffSkin.goods_id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(goods_id);
+    }
 }

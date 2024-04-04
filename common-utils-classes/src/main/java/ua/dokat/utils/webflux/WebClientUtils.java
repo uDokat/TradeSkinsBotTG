@@ -21,6 +21,9 @@ public class WebClientUtils {
     private static final String UNEXPECTED_QUERY_ERROR = "Unexpected query error: %s \nStackTrace: %s";
     private static final String UNEXPECTED_QUERY_ERROR_MESSAGE = "Unexpected query error";
 
+    //todo: доделать подобное
+    public static final HttpRequestInfo TO = new HttpRequestInfo("http://localhost:10001", "/api/buff/inventory?pageNum=1&pageSize=40");
+
     //todo: заменить TestException во всех методах.
     //todo: чекнуть видос про отлов ексепшенов. это чтобы уменьшить код.
     //todo: message в конструкторе Entity должен прокидываться (НАВРНОЕ)
