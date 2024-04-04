@@ -1,0 +1,9 @@
+/.idea/
+/HELP.md
+/callback-query-handler/target/classes/ua/dokat/
+/command-handler/target/classes/
+/common-jpa/target/classes/ua/dokat/
+/common-rabbitmq/target/classes/ua/dokat/
+/dispatcher/target/classes/
+/node/target/classes/
+/rest-api/target/classes/
