@@ -32,6 +32,7 @@ public class StateControllerImpl implements StateController {
         this.tokenService = tokenService;
     }
 
+    //todo: можно попробовать переделать на хеш мапу. если человек прописал команду, он сохраняется в мапе. при вводе ответа, будет проверятся мапа, есть ли там пользователь с таким id.
     @Override
     public boolean process(Update update) {
         User user = update.getMessage().getFrom();

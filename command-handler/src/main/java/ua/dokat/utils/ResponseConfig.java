@@ -10,7 +10,7 @@ public class ResponseConfig {
             ❌ Вы не зарегистрированы. ❌
             Команда для регистрации: /registration""";
     public final static String NO_ACTIVE = "❌ Ваш аккаунт не активирован. ❌";
-    public final static String ACTION_INC = "ACTION_INC";
+    public final static String ACTION_INC = "❌ Предыдущая команда не завершена. ❌";
 
     public final static String INPUT_ITEM_ID = "Введите айди скина.";
     public final static String WAIT_ITEM_ID = "Ввод скина уже ожидаетсяю.";
