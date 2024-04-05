@@ -5,6 +5,7 @@ import lombok.Getter;
 import ua.dokat.enums.ResponseStatus;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
