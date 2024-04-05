@@ -46,7 +46,7 @@ public class SteamInventoryTraderRepository {
 
     public boolean isRecord(@NotNull List<BuffSkin> buffSkins, BuffSkin skin){
         return buffSkins.stream()
-                .anyMatch(bs -> bs.equals(skin));
+                .anyMatch(bs -> bs.getGoods_id() == skin.getGoods_id());
     }
 
     public Optional<BuffSkin> getSkin(TraderEntity trader, int skinId){
