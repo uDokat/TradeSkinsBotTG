@@ -62,8 +62,12 @@ public class UpdateController {
         bot.sendMessage(sendMessage);
     }
 
+    //todo: сделать метод buildSendPhoto в классе MessageBuilderService и удалить отсюда инициализацию SendPhoto. Тут должна быть онли отправка
+    @Deprecated
     public void sendNotifyMessage(Notify notify){
         InputFile image = getImage(notify.getOrder());
+
+        if (image == null) return;
 
         var sendPhoto = new SendPhoto();
         sendPhoto.setChatId(notify.getChatId());
@@ -74,6 +78,7 @@ public class UpdateController {
         bot.sendNotifyMessage(sendPhoto);
     }
 
+    @Deprecated
     private InlineKeyboardMarkup buildKeyboard(){
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
         InlineKeyboardButton button = new InlineKeyboardButton("Купить(тест)");
@@ -85,22 +90,24 @@ public class UpdateController {
     }
 
     //todo: вынести куда-то
+    @Deprecated
     private InputFile getImage(BuffOrder order){
-        String url = order.getInspect_url();
+        String url = order.getOrders().get(0).getInspect_url();
 
         try {
 
             InputStream stream;
 
             if (url == null || url.equalsIgnoreCase("")){
-                stream = new URL(order.getIcon_url()).openStream();
+                stream = new URL(order.getOrders().get(0).getIcon_url()).openStream();
             }else {
                 stream = new URL(url).openStream();
             }
 
             return new InputFile(stream, "test.jpg");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("Какой-то нахуй spec равен null", e);
+            return null;
         }
     }
 

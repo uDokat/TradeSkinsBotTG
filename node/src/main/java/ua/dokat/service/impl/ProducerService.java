@@ -35,6 +35,10 @@ public class ProducerService implements Producer {
         rabbitTemplate.convertAndSend(CALLBACK_QUERY, update);
     }
 
+    public void produce(SendMessage sendMessage){
+        produceAnswer(sendMessage);
+    }
+
     public void produce(Update update, String textMessage){
         SendMessage sendMessage = createSendMessage(textMessage);
         if (sendMessage == null) return;

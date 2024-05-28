@@ -47,11 +47,11 @@
 
         <!--   Own Modules     -->
 
-        <dependency>
-            <groupId>ua.dokat</groupId>
-            <artifactId>common-json-entity</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>ua.dokat</groupId>-->
+<!--            <artifactId>common-json-entity</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>ua.dokat</groupId>
             <artifactId>common-utils-classes</artifactId>
