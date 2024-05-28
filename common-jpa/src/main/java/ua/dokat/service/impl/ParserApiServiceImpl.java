@@ -15,7 +15,7 @@ public class ParserApiServiceImpl implements ParserApiService {
     public void sendRequestForAddIdToList(String skinId, String chatId) {
         WebClient.ResponseSpec s = request(skinId, chatId);
         if (s == null) return;
-        System.out.println(s.bodyToMono(String.class).block());
+//        System.out.println(s.bodyToMono(String.class).block());
     }
 
     @PutMapping("/api/test")

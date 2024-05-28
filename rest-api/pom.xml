@@ -41,6 +41,11 @@
             <artifactId>node</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>ua.dokat</groupId>
+            <artifactId>common-utils-classes</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,0 +1,52 @@
+2024-04-05 11:50:31 DEBUG SendNotificationController:29 - A notification command has been received.
+Found SkinID: 
+2024-04-05 11:51:09 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=24563
+2024-04-05 11:54:59 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=24563
+2024-04-05 11:57:48 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=24563
+2024-04-05 12:02:58 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=5906
+2024-04-05 12:05:34 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=15324
+2024-04-05 12:05:45 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=5993
+2024-04-05 12:07:05 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=15160
+2024-04-05 12:18:12 DEBUG SendNotificationController:29 - A notification command has been received.
+Found SkinID: 
+2024-04-05 14:03:27 DEBUG SendNotificationController:30 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 14:03:47 DEBUG SendNotificationController:30 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 14:04:40 DEBUG SendNotificationController:30 - A notification command has been received.
+Found SkinID: 
+2024-04-05 14:05:01 DEBUG SendNotificationController:30 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 18:07:34 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=8253
+2024-04-05 18:07:36 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 8253
+2024-04-05 18:07:36 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?skinId=8253&pageSize=3
+2024-04-05 18:07:52 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 1923
+2024-04-05 18:07:52 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?skinId=1923&pageSize=3
+2024-04-05 18:09:45 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=898
+2024-04-05 18:09:48 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 898
+2024-04-05 18:09:48 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=898&pageSize=3
+2024-04-05 18:19:46 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 18:19:46 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=66&pageSize=3
+2024-04-05 18:20:10 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 18:20:10 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=66&pageSize=3
+2024-04-05 18:22:21 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 18:22:21 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=66&pageSize=3
+2024-04-05 18:25:53 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 18:25:54 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=66&pageSize=3
+2024-04-05 18:29:14 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 66
+2024-04-05 18:29:14 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=66&pageSize=3
+2024-04-05 18:30:28 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/item?itemId=21
+2024-04-05 18:30:34 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 21
+2024-04-05 18:30:34 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=21&pageSize=3
+2024-04-05 19:01:37 INFO  SendNotificationController:43 - A notification command has been received.
+Found SkinID: 15324
+2024-04-05 19:01:37 DEBUG WebClientUtils:34 - The request was made. URL: http://localhost:10001/api/buff/order?skinId=15324&pageSize=3

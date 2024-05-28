@@ -6,7 +6,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import ua.dokat.controller.StateController;
 import ua.dokat.entity.AppUserEntity;
-import ua.dokat.service.AddItemHandlerService;
 import ua.dokat.service.SetTokenHandlerService;
 import ua.dokat.service.impl.AppUserService;
 import ua.dokat.service.impl.ProducerService;
@@ -20,14 +19,12 @@ public class StateControllerImpl implements StateController {
 
     private final AppUserService appUserService;
     private final ProducerService producer;
-    private final AddItemHandlerService addItemHandler;
     private final SetCookieHandlerServiceImpl cookieHandler;
     private final SetTokenHandlerService tokenService;
 
-    public StateControllerImpl(AppUserService appUserService, ProducerService producer, AddItemHandlerService addItemHandler, SetCookieHandlerServiceImpl cookieHandler, SetTokenHandlerService tokenService) {
+    public StateControllerImpl(AppUserService appUserService, ProducerService producer, SetCookieHandlerServiceImpl cookieHandler, SetTokenHandlerService tokenService) {
         this.appUserService = appUserService;
         this.producer = producer;
-        this.addItemHandler = addItemHandler;
         this.cookieHandler = cookieHandler;
         this.tokenService = tokenService;
     }
@@ -70,7 +67,8 @@ public class StateControllerImpl implements StateController {
 
         }
 
-        return addItemHandler.addItem(update, appUser, itemId);
+        return null;
+//        return addItemHandler.addItem(update, appUser, itemId);
     }
 
     private String processWaitCookieState(Update update, AppUserEntity appUser){

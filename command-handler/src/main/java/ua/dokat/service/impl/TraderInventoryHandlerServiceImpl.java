@@ -11,19 +11,24 @@ import ua.dokat.entity.json.Goods;
 import ua.dokat.entity.json.http.HttpRequestInfo;
 import ua.dokat.enums.UserState;
 import ua.dokat.repository.TraderInventoryRepository;
-import ua.dokat.service.AddItemHandlerService;
+import ua.dokat.service.TraderInventoryHandlerService;
 import ua.dokat.utils.webflux.WebClientUtils;
 
 import static ua.dokat.utils.ResponseConfig.*;
 
 /**
  *
- * Service handler for the command "/reload_inventory"
- *
+ * Service to process the following commands:
+ * <p>
+ * /addItem
+ * <p>
+ * /removeItem
+ * <p>
+ * /clearItems
  **/
 @Service
 @Log4j
-public class AddItemHandlerServiceImpl implements AddItemHandlerService {
+public class TraderInventoryHandlerServiceImpl implements TraderInventoryHandlerService {
 
     private final AppUserService appUserService;
     private final TraderServiceImpl traderService;
@@ -34,7 +39,7 @@ public class AddItemHandlerServiceImpl implements AddItemHandlerService {
 
     private final WebClientUtils webClientUtils;
 
-    public AddItemHandlerServiceImpl(AppUserService appUserService, TraderServiceImpl traderService, ParserApiServiceImpl parserApiService, TraderInventoryRepository inventoryRepository, WebClientUtils webClientUtils) {
+    public TraderInventoryHandlerServiceImpl(AppUserService appUserService, TraderServiceImpl traderService, ParserApiServiceImpl parserApiService, TraderInventoryRepository inventoryRepository, WebClientUtils webClientUtils) {
         this.appUserService = appUserService;
         this.traderService = traderService;
         this.parserApiService = parserApiService;
@@ -82,11 +87,12 @@ public class AddItemHandlerServiceImpl implements AddItemHandlerService {
      **/
     //todo: почему-то записываются объекты с статусом еррор
     @Override
-    public String addItem(Update update, AppUserEntity appUser, int skinId) {
+    public String addItem(AppUserEntity appUser, int skinId) {
 
         Long userId = appUser.getTelegramUserId();
         String chatId = appUser.getChatId();
         TraderEntity trader = traderService.findTrader(userId);
+        //todo: закинуть в api.properties
         Entity<Goods> goods = webClientUtils.sendGetAndGetResponse(new HttpRequestInfo("http://localhost:10001", "/api/buff/item?itemId=" + skinId), Goods.class);
 
         if (!goods.isValid()) return ITEM_NOT_FOUND;
@@ -99,6 +105,42 @@ public class AddItemHandlerServiceImpl implements AddItemHandlerService {
         }else {
             parserApiService.sendRequestForAddIdToList(String.valueOf(skinId), chatId);
             return ADDED_RESPONSE;
+        }
+    }
+
+    @Override
+    public String removeItem(AppUserEntity appUser, int skinId) {
+
+        Long userId = appUser.getTelegramUserId();
+        String chatId = appUser.getChatId();
+        TraderEntity trader = traderService.findTrader(userId);
+
+        appUser.setState(UserState.BASIC_STATE);
+        appUserService.saveAppUser(appUser);
+
+        if (!inventoryRepository.remove(trader, skinId)){
+            return "sss";
+        }else {
+            //todo: должно быть обращение к бд парсера для удаления айди из них
+            return "aaa";
+        }
+    }
+
+    @Override
+    public String clearItems(AppUserEntity appUser) {
+
+        Long userId = appUser.getTelegramUserId();
+        String chatId = appUser.getChatId();
+        TraderEntity trader = traderService.findTrader(userId);
+
+        appUser.setState(UserState.BASIC_STATE);
+        appUserService.saveAppUser(appUser);
+
+        if (!inventoryRepository.clear(trader)){
+            return "aaa";
+        }else {
+            //todo: должно быть обращение к бд парсера для удаления айди из них
+            return "bbb";
         }
     }
 }
